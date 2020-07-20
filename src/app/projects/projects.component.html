@@ -1,0 +1,28 @@
+<div id="projects" class="profile-section">
+    <h5>Projects</h5>
+    <hr>
+    <div class="language-selector">
+        <span class="fab fa-3x {{ icon.class }}"
+            [ngStyle]="{'color': (icon.selected || icon.hover) ? icon.color : 'inherit'}"
+            *ngFor="let icon of icons"
+            (click)="filterLanguage(icon.language); icon.selected = !icon.selected"
+            (mouseover)="icon.hover = true"
+            (mouseleave)="icon.hover = false"></span>
+    </div>
+    <div class="row">
+        <div class="col-xs-12 col-lg-6" *ngFor="let repo of repos | language: selectedLanguages" (click)="openRepo(repo.html_url)">
+            <div class="card">
+                <div class="card-header">
+                    <i class="fab fa-lg {{ getIconClass(repo.language) }}"></i>{{ repo.name }}
+                </div>
+                <div class="card-body">
+                    <p class="card-text">{{ repo.description }}</p>
+                    <div class="repo-dates grouped-text">
+                        <p class="date-updated text-muted">Updated: {{ repo.updated_at }}</p>
+                        <p class="date-created text-muted">Created: {{ repo.created_at }}</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

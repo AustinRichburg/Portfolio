@@ -1,0 +1,75 @@
+.language-selector {
+    margin: 0 auto;
+    width: fit-content;
+
+    .fab {
+        margin: 5px 20px;
+    
+        &:hover {
+            cursor: pointer;
+        }
+    }
+}
+
+.card {
+    margin: 20px 10px;
+    box-shadow: 1px 3px 2px #ededed;
+    cursor: pointer;
+    height: 250px;
+    overflow: hidden;
+
+    .card-header {
+        font-weight: 800;
+        background-color: rgba(88, 12, 109, 0.6);
+
+        i {
+            margin-right: 8px;
+        }
+    }
+
+    .card-body {
+
+        .repo-dates {
+            font-size: 0.8rem;
+            width: 100%;
+            position: absolute;
+            bottom: 0;
+            left: 0;
+
+            .date-created {
+                position: absolute;
+                bottom: 0;
+                left: 0;
+                margin-left: 10px;
+            }
+            
+            .date-updated {
+                position: absolute;
+                bottom: 0;
+                right: 0;
+                margin-right: 10px;
+            }
+        }
+    }
+
+    &:hover {
+
+        .card-header {
+            background-color: rgba(37, 0, 48, 0.6);
+            color: white;
+        }
+    }
+}
+
+
+@media (min-width: 992px) and (max-width: 1270px) {
+    .date-created {
+        position: relative;
+        margin: 10px 15px;
+    }
+
+    .date-updated {
+        position: relative;
+        margin: 10px 15px;
+    }
+}
